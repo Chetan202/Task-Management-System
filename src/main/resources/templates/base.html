@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title} ? ${title} + ' - Task Management' : 'Task Management System'">Task Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            @apply bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-md font-medium transition-colors duration-200;
+        }
+
+        .btn-secondary {
+            @apply bg-slate-100 hover:bg-slate-200 text-slate-900 px-4 py-2 rounded-md font-medium transition-colors duration-200;
+        }
+
+        .btn-danger {
+            @apply bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md font-medium transition-colors duration-200;
+        }
+
+        .card {
+            @apply bg-white rounded-lg border border-slate-200 shadow-sm p-6;
+        }
+
+        .form-input {
+            @apply w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent;
+        }
+
+        .badge {
+            @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+        }
+
+        .badge-pending {
+            @apply bg-yellow-100 text-yellow-800;
+        }
+
+        .badge-progress {
+            @apply bg-blue-100 text-blue-800;
+        }
+
+        .badge-completed {
+            @apply bg-green-100 text-green-800;
+        }
+
+        .badge-high {
+            @apply bg-red-100 text-red-800;
+        }
+
+        .badge-medium {
+            @apply bg-yellow-100 text-yellow-800;
+        }
+
+        .badge-low {
+            @apply bg-gray-100 text-gray-800;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+<div th:fragment="content">
+    <!-- Content will be inserted here -->
+</div>
+
+<script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Flash message auto-hide
+    document.addEventListener('DOMContentLoaded', function() {
+        const flashMessages = document.querySelectorAll('.flash-message');
+        flashMessages.forEach(function(message) {
+            setTimeout(function() {
+                message.style.transition = 'opacity 0.5s';
+                message.style.opacity = '0';
+                setTimeout(function() {
+                    message.remove();
+                }, 500);
+            }, 3000);
+        });
+    });
+</script>
+</body>
+</html>

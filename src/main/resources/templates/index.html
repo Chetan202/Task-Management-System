@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 222.2 47.4% 11.2%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 222.2 84% 4.9%;
+            --muted: 210 40% 96%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96%;
+            --accent-foreground: 222.2 84% 4.9%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 222.2 84% 4.9%;
+            --radius: 0.5rem;
+        }
+
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --popover: 222.2 84% 4.9%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 210 40% 98%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 212.7 26.8% 83.9%;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+
+        .btn-primary {
+            background-color: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            border: 1px solid hsl(var(--primary));
+            border-radius: calc(var(--radius) - 2px);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: hsl(var(--primary) / 0.9);
+        }
+
+        .card {
+            background-color: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .muted {
+            color: hsl(var(--muted-foreground));
+        }
+
+        .accent-bg {
+            background-color: hsl(var(--accent));
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<div class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto text-center">
+
+        <div class="mb-16">
+            <div class="inline-flex items-center justify-center w-16 h-16 btn-primary rounded-2xl mb-6">
+                <i data-lucide="check-square" class="w-8 h-8"></i>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                Task Management
+                <span class="muted">System</span>
+            </h1>
+            <p class="text-xl muted mb-8 max-w-2xl mx-auto">
+                Organize your tasks, boost your productivity, and achieve your goals with our intuitive task management solution.
+            </p>
+            <a href="/oauth2/authorization/google"
+               class="inline-flex items-center px-8 py-4 btn-primary font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
+                <i data-lucide="log-in" class="w-5 h-5 mr-2"></i>
+                Get Started with Google
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="card p-8 transition-shadow duration-200">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-100 text-blue-600 rounded-lg mb-4">
+                    <i data-lucide="plus-circle" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Create Tasks</h3>
+                <p class="muted">
+                    Easily create and organize your tasks with priorities, due dates, and detailed descriptions.
+                </p>
+            </div>
+
+            <div class="card p-8 transition-shadow duration-200">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 text-green-600 rounded-lg mb-4">
+                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Track Progress</h3>
+                <p class="muted">
+                    Monitor your task progress with visual status indicators and completion statistics.
+                </p>
+            </div>
+
+            <div class="card p-8 transition-shadow duration-200">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-purple-100 text-purple-600 rounded-lg mb-4">
+                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Secure Access</h3>
+                <p class="muted">
+                    Your data is protected with Google OAuth authentication and secure cloud storage.
+                </p>
+            </div>
+        </div>
+
+         <div class="card p-12">
+            <h2 class="text-3xl font-bold mb-4">Ready to get organized?</h2>
+            <p class="text-lg muted mb-8">
+                Join thousands of users who have transformed their productivity with our task management system.
+            </p>
+            <a href="/oauth2/authorization/google"
+               class="inline-flex items-center px-6 py-3 btn-primary font-semibold rounded-lg transition-colors duration-200">
+                <span>Start Managing Tasks</span>
+                <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>
