@@ -76,12 +76,61 @@ Track, add, edit, and delete tasks through a clean, responsive UI.
 git clone https://github.com/Chetan202/Task-Management-System.git
 cd Task-Management-System
 
+```
+### 🔗 API Endpoints
+| Method | Endpoint      | Description             |
+| ------ | ------------- | ----------------------- |
+| GET    | `/tasks`      | List all tasks          |
+| GET    | `/tasks/{id}` | Get task by ID          |
+| POST   | `/tasks`      | Create a new task       |
+| PUT    | `/tasks/{id}` | Update an existing task |
+| DELETE | `/tasks/{id}` | Delete a task           |
+```
+```
+### 📁 Project Structure
+```
+├── mvnw*                       # Maven wrapper
+├── pom.xml                     # Project dependencies
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.example.taskmanagement
+│   │   │       ├── controller   # Spring MVC controllers
+│   │   │       ├── model        # JPA entity classes
+│   │   │       ├── repository   # Spring Data JPA repos
+│   │   │       ├── service      # Business logic
+│   │   │       └── TaskManagementSystemApplication.java
+│   │   └── resources
+│   │       ├── templates       # Thymeleaf HTML templates
+│   │       └── application.properties
+└── README.md
 
+```
+### 🤝 Contributing
+```
+Contributions are welcome! Please:
 
+    Fork the project
 
+    Create your feature branch (git checkout -b feature/your-feature)
 
+    Commit your changes (git commit -m 'Add some feature')
 
+    Push to the branch (git push origin feature/your-feature)
 
+    Open a Pull Request
 
+```
+### 📄 License
+```
+This project is licensed under the MIT License.
+```
+### 📬 Contact
+```
+Created by Chetan Jha – feel free to reach out!
+
+    GitHub: @Chetan202
+
+    Email: chetanjha888@gmail.com
 
 
