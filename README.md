@@ -12,6 +12,69 @@
 ![Screenshot 2025-06-08 at 12-44-38 New Task - Task Management System](https://github.com/user-attachments/assets/671b6bcd-bcb7-4016-8a33-15d13317e9b8)
 
 
+# Task Management System
+
+A simple web‑based Task Management System built with Spring Boot and MySQL.  
+Track, add, edit, and delete tasks through a clean, responsive UI.
+
+---
+
+## 📋 Table of Contents
+
+1. [Features](#-features)  
+2. [Screenshots](#-screenshots)  
+3. [Tech Stack](#-tech-stack)  
+4. [Prerequisites](#-prerequisites)  
+5. [Getting Started](#-getting-started)  
+   - [Clone the repo](#clone-the-repo)  
+   - [Configure the database](#configure-the-database)  
+   - [Build & Run](#build--run)  
+6. [API Endpoints](#-api-endpoints)  
+7. [Project Structure](#-project-structure)  
+8. [Contributing](#-contributing)  
+9. [License](#-license)  
+10. [Contact](#-contact)
+
+---
+
+## 🛠 Features
+
+- **List Tasks**: View all your tasks at a glance  
+- **Create Task**: Add new tasks with title, description, due date  
+- **Edit Task**: Update task details or mark as complete  
+- **Delete Task**: Remove tasks you no longer need  
+- **Responsive UI**: Works on both desktop and mobile screens  
+- **MySQL Persistence**: Data stored in MySQL database  
+
+
+---
+
+## 🔧 Tech Stack
+
+- **Backend**: Spring Boot (Java 17+)  
+- **Database**: MySQL  
+- **Build Tool**: Maven  
+- **Frontend**: Thymeleaf, Bootstrap (or your choice CSS framework)  
+- **Version Control**: Git & GitHub  
+
+---
+
+## 📦 Prerequisites
+
+- Java 17 (or newer)  
+- Maven 3.6+  
+- MySQL 8.0+  
+- Git  
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/Chetan202/Task-Management-System.git
+cd Task-Management-System
 
 
 
